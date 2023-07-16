@@ -1,13 +1,11 @@
 package be.archilios.algorithm.math;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class NumberMultiples {
     private int number;
     private final int[] multiplesOf;
-    private final List<Integer> multiples;
+    private final Set<Integer> multiples;
     
     public NumberMultiples(int number, int[] multiplesOf) {
         this.number = number;
@@ -15,8 +13,8 @@ public class NumberMultiples {
         multiples = calculateMultiples();
     }
     
-    private List<Integer> calculateMultiples() {
-        List<Integer> multiples = new ArrayList<>();
+    private Set<Integer> calculateMultiples() {
+        Set<Integer> multiples = new TreeSet<>();
         for (int i = 1; i < number; i++) {
             for (int multipleOf : multiplesOf) {
                 if (i % multipleOf == 0) {
