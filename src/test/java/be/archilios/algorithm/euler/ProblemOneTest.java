@@ -20,7 +20,7 @@ public class ProblemOneTest {
     void testProblemOneExample() {
         NumberMultiples numbers = new NumberMultiples(10, new int[]{3, 5});
         
-        int sum = Arrays.stream(numbers.getMultiples()).sum();
+        int sum = numbers.sumOfMultiples();
         
         assertEquals(23, sum);
     }
@@ -28,8 +28,8 @@ public class ProblemOneTest {
     @Test
     void testProblemOneSolution() {
         NumberMultiples numbers = new NumberMultiples(1000, new int[]{3, 5});
-        
-        int sum = Arrays.stream(numbers.getMultiples()).sum();
+    
+        int sum = numbers.sumOfMultiples();
         
         assertEquals(233168, sum);
     }

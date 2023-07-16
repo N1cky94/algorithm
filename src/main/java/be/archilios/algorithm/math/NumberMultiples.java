@@ -38,4 +38,8 @@ public class NumberMultiples {
     public boolean isMultiple(int number) {
         return multiples.contains(number);
     }
+    
+    public int sumOfMultiples() {
+        return multiples.stream().mapToInt(i -> i).sum();
+    }
 }
