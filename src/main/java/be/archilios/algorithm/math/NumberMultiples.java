@@ -5,24 +5,26 @@ import java.util.*;
 public class NumberMultiples {
     private int number;
     private final int[] multiplesOf;
-    private final Set<Integer> multiples;
+    private Set<Integer> multiples = new TreeSet<>();;
     
     public NumberMultiples(int number, int[] multiplesOf) {
         this.number = number;
         this.multiplesOf = multiplesOf;
-        multiples = calculateMultiples();
+        calculateMultiples();
     }
     
-    private Set<Integer> calculateMultiples() {
-        Set<Integer> multiples = new TreeSet<>();
-        for (int i = 1; i < number; i++) {
-            for (int multipleOf : multiplesOf) {
-                if (i % multipleOf == 0) {
-                    multiples.add(i);
-                }
+    private void calculateMultiples() {
+        for (int potentialMultiple = 1; potentialMultiple < number; potentialMultiple++) {
+            testMultiplicityOf(potentialMultiple);
+        }
+    }
+    
+    private void testMultiplicityOf(int potentialMultiple) {
+        for (int multipleOf : multiplesOf) {
+            if (potentialMultiple % multipleOf == 0) {
+                multiples.add(potentialMultiple);
             }
         }
-        return multiples;
     }
     
     public int getNumber() {
