@@ -10,11 +10,18 @@ A new release, will always provide an answer to a new question. Most questions c
 
 ## Approach
 
-This project is a pure Java project that focusses on my aproach to solve a problem by code.
+This project is a pure Java project that focuses on my approach to solve a problem by code.
 The code is written in a way that it can be used in a production environment, but it is not the main goal.
 The main goal is to provide a correct answer to a question and to make sure that the answer is still correct when parameters change.
 Clean Code is used to clean up the code, and reuse parts later on.
 The testing suite will test my algorithms as well as test for the correct answer to the problem.
+
+### Writing Approach
+1. First of all we start by describing the problem and analysing given solutions to a smaller version of the problem.
+2. We create a general method that only focuses on solving the problem once.
+3. We create a test that tests the found and correct solution to the problem.
+4. We start restructure the code to make it more readable and reusable.
+5. We write tests to accommodate all the classes and behaviour of the restructured systems.
 
 ### Development and Versions
 This code is my personal approach to solving problems. There for I will not be using branches in the beginning. 
