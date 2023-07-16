@@ -8,7 +8,10 @@ public class NumberMultiples {
     private Set<Integer> multiples = new TreeSet<>();;
     
     public NumberMultiples(int number, int[] multiplesOf) {
-        this.number = number;
+        if (multiplesOf.length == 0) {
+            throw new ArithmeticException("Cannot calculate multiples of zero");
+        }
+        this.number = Math.abs(number);
         this.multiplesOf = multiplesOf;
         calculateMultiples();
     }
@@ -22,7 +25,7 @@ public class NumberMultiples {
     private void testMultiplicityOf(int potentialMultiple) {
         for (int multipleOf : multiplesOf) {
             if (potentialMultiple % multipleOf == 0) {
-                multiples.add(potentialMultiple);
+                multiples.add(Math.abs(potentialMultiple));
             }
         }
     }
